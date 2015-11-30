@@ -53,8 +53,8 @@ class BAMLT
         // Allow a "name" input
         if(isset($input['name'])){
             $name = explode(' ', preg_replace('/\s+/', ' ', (trim($input['name']))));
-            $input['first_name'] = $name[0];
-            $input['last_name'] = $name[1];
+            $input['first_name'] = isset($name[0]) ? $name[0] : '';
+            $input['last_name']  = isset($name[1]) ? $name[1] : '';
         }
         
         // Loop through supplied data and take allowed values
