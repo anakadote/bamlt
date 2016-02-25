@@ -66,7 +66,7 @@ class BAMLT
                 
         // The XML
         $xml  = "<?xml version='1.0'?><root>";
-        $xml .= "<source>" . $this->cleanForXML($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']) . "</source>";
+        $xml .= "<source>" . $this->cleanForXML($_SERVER['HTTP_REFERER']) . "</source>";
         
         if($is_client_uri){
             $xml .= "<uri_client>" . $uri . "</uri_client>";
