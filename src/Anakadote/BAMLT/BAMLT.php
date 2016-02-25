@@ -69,7 +69,7 @@ class BAMLT
         $xml .= "<source>" . $this->cleanForXML($_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']) . "</source>";
         
         if($is_client_uri){
-            $xml .= "<client_uri>" . $uri . "</client_uri>";
+            $xml .= "<uri_client>" . $uri . "</uri_client>";
         } else {
             $xml .= "<uri>" . $uri . "</uri>";
         }
