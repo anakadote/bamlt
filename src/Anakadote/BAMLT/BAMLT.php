@@ -11,13 +11,13 @@ namespace Anakadote\BAMLT;
 class BAMLT
 {
     /**
-     * Allowed inputs
+     * Allowed inputs to be sent to BAMLT
      *
      * @var array
      */
     private $allowed_inputs = [
         'first_name', 'last_name', 'email', 'phone', 'phone_ext', 'address', 'address_2', 'city', 'state', 'zip', 'interest', 'comments', 
-        'lead_generator', 'delivery_source', 'media_type', 'referrer_token', 'utm',
+        'lead_generator', 'delivery_source', 'media_type', 'referrer_token',
     ];
     
     /**
@@ -65,6 +65,7 @@ class BAMLT
         }
         
         // Build the source url
+        // Append UTM params if provided
         $source = $_SERVER['HTTP_REFERER'];
         if (! empty($input['utm'])) {
             $source .= '?' . http_build_query($input['utm']);
