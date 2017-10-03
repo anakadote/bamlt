@@ -73,7 +73,7 @@ class BAMLT
         
         // The XML
         $xml  = "<?xml version='1.0'?><root>";
-        $xml .= "<source>" . $this->cleanForXML($source) . "</source>";
+        $xml .= "<source>" . urlencode($source) . "</source>";
         
         if ($is_client_uri) {
             $xml .= "<uri_client>" . $uri . "</uri_client>";
