@@ -66,7 +66,7 @@ class BAMLT
         
         // Build the source url
         // Append UTM params if provided
-        $source = $_SERVER['HTTP_REFERER'];
+        $source = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
         if (! empty($input['utm'])) {
             $source .= '?' . http_build_query($input['utm']);
         }
