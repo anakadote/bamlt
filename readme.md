@@ -12,6 +12,10 @@ Next, update Composer from the Terminal:
 
     composer update
 
+Next, add the service provider. Open `config/app.php` and add a new item to the providers array.
+
+   Anakadote\BAMLT\BAMLTServiceProvider::class
+
 
 ## Usage
 
