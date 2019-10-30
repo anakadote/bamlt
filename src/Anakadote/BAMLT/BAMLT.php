@@ -17,7 +17,7 @@ class BAMLT
      */
     private $allowed_inputs = [
         'first_name', 'last_name', 'email', 'phone', 'phone_ext', 'address', 'address_2', 'city', 'state', 'zip', 'interest', 'comments', 
-        'referred_by', 'lead_generator', 'delivery_source', 'media_type', 'referrer_token',
+        'referred_by', 'lead_generator', 'delivery_source', 'media_type', 'referrer_token', 'source_tracking_token',
     ];
     
     /**
