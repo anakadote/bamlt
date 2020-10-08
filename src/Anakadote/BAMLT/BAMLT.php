@@ -51,7 +51,7 @@ class BAMLT
         if (isset($input['name'])) {
             $name = explode(' ', preg_replace('/\s+/', ' ', (trim($input['name']))));
             $input['first_name'] = isset($name[0]) ? $name[0] : '';
-            $input['last_name']  = isset($name[1]) ? $name[1] : '';
+            $input['last_name']  = count($name) > 1 ? array_pop($name) : '';
         }
         
         // Loop through supplied data and take allowed values
