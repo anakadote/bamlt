@@ -12,5 +12,4 @@ class BAMLT extends Facade {
      * @return string
      */
     protected static function getFacadeAccessor() { return 'bamlt'; }
-    
 }

@@ -51,5 +51,4 @@ class BAMLTServiceProvider extends ServiceProvider
     {
         return [];
     }
-
 }

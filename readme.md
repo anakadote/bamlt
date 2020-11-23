@@ -12,18 +12,14 @@ Next, update Composer from the Terminal:
 
     composer update
 
-Next, add the service provider. Open `config/app.php` and add a new item to the providers array.
-
-    Anakadote\BAMLT\BAMLTServiceProvider::class
-
 
 ## Usage
 
 There is one public method available, **send(string $uri, array $input, $is_client_uri = false)**, which takes three parameters:
 
 1. **$uri**  - (required) BAM Lead Tracker URI
-2. **$input** -  (required)
-3. **$is_client_uri**  - true for a Client URI, false for a Store URI   
+2. **$input** - (required)
+3. **$is_client_uri** - true for a Client URI, false for a Store URI
 
 
     with(new BAMLT)->send(BAMLT_URI, $input);
@@ -33,7 +29,7 @@ There is one public method available, **send(string $uri, array $input, $is_clie
 
 To use with Laravel, add the service provider. Open `config/app.php` and add a new item to the providers array.
 
-    Anakadote\BAMLT\BAMLTProvider::class
+    Anakadote\BAMLT\BAMLTServiceProvider::class
 
 This package is also accessible via a Laravel Facade so to use simply call its methods on the Facade "BAMLT":  
 
