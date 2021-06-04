@@ -61,16 +61,22 @@ class BAMLT
             }
         }
         
+
         // Build the source url
         // Append UTM params if provided
-        $source = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
-        if (! empty($input['utm'])) {
-            $source .= '?' . http_build_query($input['utm']);
+        $source_url = null;
+        if ($referrer = parse_url(($_SERVER['HTTP_REFERER'] ?? ''))) {
+            $source_url = sprintf('%s://%s%s', $referrer['scheme'], $referrer['host'], $referrer['path']);
         }
-        
+
+        if (! empty($input['utm'])) {
+            $source_url .= '?' . http_build_query($input['utm']);
+        }
+
+
         // The XML
         $xml  = "<?xml version='1.0'?><root>";
-        $xml .= "<source>" . urlencode($source) . "</source>";
+        $xml .= "<source>" . $source_url . "</source>";
         
         if ($is_client_uri) {
             $xml .= "<uri_client>" . $uri . "</uri_client>";
